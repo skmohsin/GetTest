@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GetTest.Contracts\GetTest.Contracts.csproj" />
+    <ProjectReference Include="..\GetTest.Services.Implementation\GetTest.Services.Implementation.csproj" />
+    <ProjectReference Include="..\GetTest.Services\GetTest.Services.csproj" />
+    <ProjectReference Include="..\GetTest.Utilities\GetTest.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>
