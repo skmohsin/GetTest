@@ -50,13 +50,6 @@ namespace GetTest.Services.Implementation
 
 
 
-
-
-
-
-
-
-
 //var users = _dbContext.Users.AsQueryable();
 //var o = users.ProjectTo<UserDto>(configuration: _mapper.ConfigurationProvider);
 //var revereseUsers = o.ProjectTo<User>(configuration: _mapper.ConfigurationProvider);
