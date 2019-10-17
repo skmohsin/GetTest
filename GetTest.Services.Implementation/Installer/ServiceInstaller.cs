@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GetTest.Services.Implementation.Installer
 {
-    class ServiceInstaller : Module
+    public class ServiceInstaller : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

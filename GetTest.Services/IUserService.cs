@@ -7,7 +7,9 @@ namespace GetTest.Services
     public interface IUserService
     {
        
-        Task<ApiResponse> GetDoctorsAsync();
+        Task<ApiResponse> GetUsersAsync();
+        Task<ApiResponse> PostUserAsync(User user);
+
         //Task<Doctor> GetDoctorByIdAsync(Guid postId);
         //Task<bool> CreateDoctorAsync(Doctor post);
         //Task<bool> UpdateDoctorAsync(Doctor postToUpdate);

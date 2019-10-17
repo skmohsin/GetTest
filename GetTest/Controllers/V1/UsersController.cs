@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using GetTest.Contracts;
 using GetTest.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +17,20 @@ namespace GetTest.Controllers
         }
 
         [HttpGet("api/v1/users")]
-        public async Task<IActionResult> GetDoctorAsync()
+        public async Task<IActionResult> GetUserAsync()
         {
-            var response = await _userService.GetDoctorsAsync();
+            var response = await _userService.GetUsersAsync();
+            if (response.StatusCode == Services.Enum.StatusCode.Ok)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        [HttpPost("api/v1/users")]
+        public async Task<IActionResult> PostUserAsync(User user)
+        {
+            var response = await _userService.PostUserAsync(user);
             if (response.StatusCode == Services.Enum.StatusCode.Ok)
             {
                 return Ok(response);
