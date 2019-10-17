@@ -10,7 +10,7 @@ namespace GetTest.Services.Implementation
 {
     public class PatientService : IPatientService
     {
-        public async Task<IEnumerable<Patient>> GetPatientsAsync()
+        public async Task<IEnumerable<PatientDto>> GetPatientsAsync()
         {
             var patients = new List<Entities.Patient>();
             for (int i = 0; i < 5; i++)

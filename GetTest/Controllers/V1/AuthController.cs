@@ -17,7 +17,7 @@ namespace GetTest.Api.Controllers.V1
         }
 
         [HttpPost("api/v1/token")]
-        public async Task<IActionResult> AuthenticationAsync(Auth auth)
+        public async Task<IActionResult> AuthenticationAsync(AuthDto auth)
         {
             var response = await _authService.Authentication(auth);
             if (response.StatusCode == Services.Enum.StatusCode.Ok)

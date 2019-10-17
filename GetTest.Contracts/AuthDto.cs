@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GetTest.Contracts
 {
-    public class Auth
+    public class AuthDto
     {
         [Required]
         [MaxLength(15, ErrorMessage = "Mobile should be 15 character or less")]

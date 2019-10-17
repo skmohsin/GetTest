@@ -25,7 +25,7 @@ namespace GetTest.Services.Implementation
                     : new ApiResponse { Data = null, Message = "Success", StatusCode = StatusCode.NoContent };
         }
 
-        public async Task<ApiResponse> PostUserAsync(User user)
+        public async Task<ApiResponse> PostUserAsync(UserDto user)
         {
 
             return null;

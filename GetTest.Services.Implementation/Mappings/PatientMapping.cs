@@ -1,4 +1,5 @@
-﻿using GetTest.Contracts;
+﻿using AutoMapper;
+using GetTest.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,12 @@ using System.Text;
 
 namespace GetTest.Services.Implementation.Mappings
 {
-    public class PatientMapping
+    public class PatientMapping : Profile
     {
-        public IQueryable<Patient> Map(IQueryable<Entities.Patient> source)
+        public IQueryable<PatientDto> Map(IQueryable<Entities.Patient> source)
         {
             return from p in source
-                   select new Patient
+                   select new PatientDto
                    {
                        //Id = p.Id,
                        //Name = p.Name,

@@ -8,7 +8,7 @@ namespace GetTest.Services
     {
        
         Task<ApiResponse> GetUsersAsync();
-        Task<ApiResponse> PostUserAsync(User user);
+        Task<ApiResponse> PostUserAsync(UserDto user);
 
         //Task<Doctor> GetDoctorByIdAsync(Guid postId);
         //Task<bool> CreateDoctorAsync(Doctor post);

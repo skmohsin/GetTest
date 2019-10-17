@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GetTest.Contracts
 {
-    public class Patient
+    public class PatientDto
     {
         [JsonProperty("PatientID")]
         public int  PatientID{ get; set; }

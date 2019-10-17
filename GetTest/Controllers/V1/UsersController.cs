@@ -28,7 +28,7 @@ namespace GetTest.Controllers
         }
 
         [HttpPost("api/v1/users")]
-        public async Task<IActionResult> PostUserAsync(User user)
+        public async Task<IActionResult> PostUserAsync(UserDto user)
         {
             var response = await _userService.PostUserAsync(user);
             if (response.StatusCode == Services.Enum.StatusCode.Ok)

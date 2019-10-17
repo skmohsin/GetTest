@@ -1,4 +1,5 @@
-﻿using GetTest.Contracts;
+﻿using AutoMapper;
+using GetTest.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,16 +7,16 @@ using System.Text;
 
 namespace GetTest.Services.Implementation.Mappings
 {
-    public class UserMapping
+    public class UserMapping : Profile
     {
-        public User Map(Entities.User source)
+        public UserDto Map(Entities.User source)
         {
             return source == null ? null : this.Map(new List<Entities.User> { source }.AsQueryable()).First();
         }
-        public IQueryable<User> Map(IQueryable<Entities.User> source)
+        public IQueryable<UserDto> Map(IQueryable<Entities.User> source)
         {
             return from s in source
-                   select new User
+                   select new UserDto
                    {
                        UserID = s.UserID,
                        Name = s.Name,

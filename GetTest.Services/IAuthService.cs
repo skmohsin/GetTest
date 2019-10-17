@@ -9,6 +9,6 @@ namespace GetTest.Services
 {
     public interface IAuthService
     {
-        Task<ApiResponse> Authentication(Auth auth);
+        Task<ApiResponse> Authentication(AuthDto auth);
     }
 }

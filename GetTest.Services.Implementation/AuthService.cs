@@ -23,7 +23,7 @@ namespace GetTest.Services.Implementation
             _dbContext = dbContext;
             _configuration = configuration;
         }
-        public async Task<ApiResponse> Authentication(Auth auth)
+        public async Task<ApiResponse> Authentication(AuthDto auth)
         {
             var authUser = await _dbContext.Users.Where(u => u.Mobile == auth.Mobile && u.Password == auth.Password).SingleOrDefaultAsync();
             return authUser != null

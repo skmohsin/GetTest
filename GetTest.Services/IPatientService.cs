@@ -9,6 +9,6 @@ namespace GetTest.Services
 {
     public interface IPatientService
     {
-        Task<IEnumerable<Patient>> GetPatientsAsync();
+        Task<IEnumerable<PatientDto>> GetPatientsAsync();
     }
 }
