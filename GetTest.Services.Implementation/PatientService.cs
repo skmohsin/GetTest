@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GetTest.Contracts;
+using GetTest.Contracts.Response;
 using GetTest.Services.Implementation.Mappings;
 
 namespace GetTest.Services.Implementation
 {
     public class PatientService : IPatientService
     {
-        public async Task<IEnumerable<PatientDto>> GetPatientsAsync()
+        public async Task<ApiResponse> GetPatientsAsync()
         {
             var patients = new List<Entities.Patient>();
             for (int i = 0; i < 5; i++)
@@ -25,7 +26,7 @@ namespace GetTest.Services.Implementation
                         //Gender = $"Gender {i}"
                     });
             }
-            return patients != null ? new PatientMapping().Map(patients.AsQueryable()) : null;
+            return null;
         }
     }
 }
