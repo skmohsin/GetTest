@@ -33,9 +33,11 @@ namespace GetTest.Services.Implementation
 
         public async Task<ApiResponse> PostUserAsync(UserDto user)
         {
-            await _dbContext.Users.AddAsync(_mapper.Map<User>(user));
+            user.CreatedBy = 1;
+            var postData = _mapper.Map<User>(user);
+            await _dbContext.Users.AddAsync(postData);
             await _dbContext.SaveChangesAsync();
-            user.UserID = user.UserID;
+            user.UserID = postData.UserID;
             return new ApiResponse { Data = user, Message = "Success", StatusCode = StatusCode.Created };
         }
     }

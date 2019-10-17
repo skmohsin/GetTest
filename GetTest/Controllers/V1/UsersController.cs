@@ -31,7 +31,7 @@ namespace GetTest.Controllers
         public async Task<IActionResult> PostUserAsync(UserDto user)
         {
             var response = await _userService.PostUserAsync(user);
-            if (response.StatusCode == Services.Enum.StatusCode.Ok)
+            if (response.StatusCode == Services.Enum.StatusCode.Created)
             {
                 return Ok(response);
             }

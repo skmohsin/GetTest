@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GetTest.Entities
 {
     [Table("User")]
-    public class User : Entity.Entity
+    public class User 
     {
         [Key]
         public int UserID { get; set; }
@@ -19,5 +19,6 @@ namespace GetTest.Entities
         public string Degree { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

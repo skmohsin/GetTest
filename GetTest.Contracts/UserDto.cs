@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using GetTest.Entities.Entity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace GetTest.Contracts
 {
-    public class UserDto
+    public class UserDto : Entity
     {
         [JsonProperty("UserID")]
         public int UserID { get; set; }
@@ -43,5 +44,6 @@ namespace GetTest.Contracts
 
         [JsonProperty("Role")]
         public string Role { get; set; }
+
     }
 }
