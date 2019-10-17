@@ -9,9 +9,7 @@ namespace GetTest.Services
        
         Task<ApiResponse> GetUsersAsync();
         Task<ApiResponse> PostUserAsync(UserDto user);
-
         //Task<Doctor> GetDoctorByIdAsync(Guid postId);
-        //Task<bool> CreateDoctorAsync(Doctor post);
         //Task<bool> UpdateDoctorAsync(Doctor postToUpdate);
         //Task<bool> DeleteDoctorAsync(Guid postId);
     }
