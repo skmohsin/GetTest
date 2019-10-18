@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GetTest.Contracts
 {
-    public class UserDto : Entity
+    public class UserDto 
     {
         [JsonProperty("UserID")]
         public int UserID { get; set; }
@@ -44,6 +44,5 @@ namespace GetTest.Contracts
 
         [JsonProperty("Role")]
         public string Role { get; set; }
-
     }
 }
