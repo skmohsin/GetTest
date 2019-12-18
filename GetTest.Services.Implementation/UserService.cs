@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -36,7 +37,8 @@ namespace GetTest.Services.Implementation
         {
             var postData = _mapper.Map<User>(user);
             postData.CreatedBy = 1;
-            await _dbContext.Users.AddAsync(postData);
+            postData.CreatedOn = DateTime.Now;
+            _dbContext.Entry(postData).State = EntityState.Added;
             await _dbContext.SaveChangesAsync();
             user.UserID = postData.UserID;
             return new ApiResponse { Data = user, Message = "Success", StatusCode = StatusCode.Created };
@@ -63,8 +65,13 @@ namespace GetTest.Services.Implementation
             if (_user != null)
             {
                 var modifiedData = _mapper.Map<User>(user);
-                await _dbContext.Users.AddAsync(modifiedData);
-                await _dbContext.SaveChangesAsync();
+                modifiedData.UpdatedBy = 1;
+                modifiedData.CreatedOn = _user.CreatedOn;
+                modifiedData.CreatedBy = _user.CreatedBy;
+                modifiedData.UpdatedOn = DateTime.Now;
+                _dbContext.Entry(_user).State = EntityState.Detached;
+                _dbContext.Entry(modifiedData).State = EntityState.Modified;
+                _dbContext.SaveChanges();
                 return new ApiResponse { Data = user, Message = "Success", StatusCode = StatusCode.Ok };
             }
             else
@@ -82,9 +89,9 @@ namespace GetTest.Services.Implementation
 
 //using (var context = new SchoolDBEntities())
 //{
-    //context.Entry(student).State = student.StudentId == 0? EntityState.Added : EntityState.Modified;
+//context.Entry(student).State = student.StudentId == 0? EntityState.Added : EntityState.Modified;
 
-    //context.SaveChanges();
+//context.SaveChanges();
 //}
 
 

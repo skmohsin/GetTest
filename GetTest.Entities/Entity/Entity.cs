@@ -6,22 +6,8 @@ namespace GetTest.Entities.Entity
 {
     public abstract class Entity
     {
-
-        private DateTime? createdOn;
-
         public int CreatedBy { get; set; }
-
-        public DateTime? CreatedOn
-        {
-            get
-            {
-                if (createdOn == null)
-                {
-                    createdOn = DateTime.Now;
-                }
-                return createdOn.Value;
-            }
-        }
+        public DateTime? CreatedOn { get; set; }
         public int? UpdatedBy { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public bool IsActive { get; set; }
@@ -29,6 +15,19 @@ namespace GetTest.Entities.Entity
 }
 
 
+
+// private DateTime? createdOn;
+//public DateTime? CreatedOn
+//{
+//    get
+//    {
+//        if (createdOn == null)
+//        {
+//            createdOn = DateTime.Now;
+//        }
+//        return createdOn.Value;
+//    }
+//}
 
 //public DateTime? _CreatedOn { private get; set; }
 //public DateTime? CreatedOn

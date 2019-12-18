@@ -15,6 +15,8 @@ namespace GetTest.Services.Implementation.Mappings
             var config = new MapperConfiguration(cfg => {
 
                 cfg.CreateMap<User, UserDto>().ReverseMap();
+                cfg.CreateMap<Test, TestDto>().ReverseMap();
+                cfg.CreateMap<Patient, PatientDto>().ReverseMap();
 
             });
 

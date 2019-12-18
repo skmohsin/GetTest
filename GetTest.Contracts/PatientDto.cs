@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace GetTest.Contracts
 {
@@ -29,5 +27,8 @@ namespace GetTest.Contracts
         [MaxLength(200, ErrorMessage = "Address should be 200 character or less")]
         [JsonProperty("Address")]
         public string Address { get; set; }
+
+        [JsonProperty("Tests")]
+        public IEnumerable<TestDto> Test { get; set; }
     }
 }

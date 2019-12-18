@@ -11,5 +11,9 @@ namespace GetTest.Services
     public interface IPatientService
     {
         Task<ApiResponse> GetPatientsAsync();
+        Task<ApiResponse> PostPatientAsync(PatientDto patient);
+        Task<ApiResponse> GetPatientByIdAsync(int id);
+        Task<ApiResponse> DeletePatientAsync(int id);
+        Task<ApiResponse> UpdatePatientAsync(int id, PatientDto patient);
     }
 }

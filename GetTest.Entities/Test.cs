@@ -6,15 +6,12 @@ using System.Text;
 
 namespace GetTest.Entities
 {
-    [Table("Patient")]
-    public class Patient : Entity.Entity
+    [Table("Test")]
+    public class Test : Entity.Entity
     {
         [Key]
+        public int TestID { get; set; }
         public int PatientID { get; set; }
         public string Name { get; set; }
-        public string Mobile { get; set; }
-        public string Gender { get; set; }
-        public string Address { get; set; }
-        public IEnumerable<Test> Test { get; set; }
     }
 }
