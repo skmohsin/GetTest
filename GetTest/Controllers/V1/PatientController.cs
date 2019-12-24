@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using GetTest.Contracts;
 using GetTest.Services;
 using GetTest.Utilities.Extension;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GetTest.Api.Controllers.V1
 {
     [ApiController]
+    [Authorize(Roles = "Doctor")]
     public class PatientController : ControllerBase
     {
         private readonly IPatientService _patService;
@@ -48,9 +50,9 @@ namespace GetTest.Api.Controllers.V1
             var response = await _patService.GetPatientByIdAsync(patientID);
             if (response.StatusCode == Services.Enum.StatusCode.Ok)
             {
-                return Ok(response.RemoveNullKey());
+                return Ok(response);
             }
-            return BadRequest(response.RemoveNullKey());
+            return BadRequest(response);
         }
 
         [HttpDelete("api/v1/patient/{patientID}")]

@@ -8,16 +8,16 @@ namespace GetTest.Contracts
 {
     public class TestDto
     {
-        [JsonProperty("TestID")]
+        [JsonProperty("testID")]
         public int TestID { get; set; }
 
         [Required]
-        [JsonProperty("PatientID")]
+        [JsonProperty("patientID")]
         public int PatientID { get; set; }
 
         [Required]
         [MaxLength(50, ErrorMessage = "Test name should be 50 character or less")]
-        [JsonProperty("Name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
     }
 }
